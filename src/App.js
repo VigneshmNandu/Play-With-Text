@@ -10,8 +10,8 @@ function App() {
       <Navbar title="Text Analyzer" aboutPage="About Page" />
       {/* <Navbar /> */}
       <div className="container">
-        {/* <TextForm heading = "Enter The Text To Convert 👇"/>  */}
-        {<About />}
+        <TextForm heading="Enter The Text To Convert 👇" />
+        {/* {<About />} */}
       </div>
 
 
