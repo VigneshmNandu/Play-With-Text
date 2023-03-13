@@ -33,7 +33,7 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -43,7 +43,7 @@ export default function Navbar(props) {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </nav>
@@ -54,10 +54,10 @@ export default function Navbar(props) {
 Navbar.propTypes = {
   title: PropTypes.string,
   aboutPage: PropTypes.string,
-  
+
 }
 
 Navbar.defaultProps = {
-    title: 'Home',
-    aboutPage: 'About'
+  title: 'Home',
+  aboutPage: 'About'
 }

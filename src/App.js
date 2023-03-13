@@ -1,6 +1,8 @@
 import "./App.css";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+
 
 function App() {
   return (
@@ -8,8 +10,12 @@ function App() {
       <Navbar title="Text Analyzer" aboutPage="About Page" />
       {/* <Navbar /> */}
       <div className="container">
-        <TextForm heading = "Enter The Text To Convert 👇"/> 
+        {/* <TextForm heading = "Enter The Text To Convert 👇"/>  */}
+        {<About />}
       </div>
+
+
+
     </>
   );
 }

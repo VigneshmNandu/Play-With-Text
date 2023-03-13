@@ -21,15 +21,17 @@ export default function TextForm(props) {
                 </div>
                 <button className="btn btn-primary mx-2" onClick={() => { let newText = text.toUpperCase(); setText(newText); }}> CONVERT TO UPPER CASE </button>
                 <button className="btn btn-primary" onClick={() => { let newText = text.toLowerCase(); setText(newText); }}> convert to lower case </button>
+                {/* <button className="btn btn-primary" onClick={() => {  }}> convert to lower case </button> */}
             </div>
             <div className="container mb-7" >
-                <h1> Details about The Text You Entered </h1>
+                <h2> Details about The Text You Entered </h2>
                 <p>
                     Number of characters - {text.length} <br />
                     Number of Words - {text.split(" ").length} <br />
-                    Time Required to Read this sentence / Paragraph - {" "}
+                    Time Required to Read this Paragraph - {" "}
                     {text.split(" ").length * 0.008} minutes
                     <br />
+                    Number of Sentences - {text.split(".").length - 1} <br />
                 </p>
             </div>
         </>
