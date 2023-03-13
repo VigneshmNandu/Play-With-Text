@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function TextForm(props) {
     const [text, setText] = useState("");
 
     let handleCopyText = () => {
-       let newText = document.getElementById('myBox');
-       navigator.clipboard.writeText(newText.value)
+        let newText = document.getElementById('myBox');
+        navigator.clipboard.writeText(newText.value)
+        toast.success('Text Copied', { autoClose: 3000 })
+
     }
 
     return (
@@ -40,6 +45,7 @@ export default function TextForm(props) {
                     <br />
                     Number of Sentences - {text.split(".").length - 1} <br />
                 </p>
+                <ToastContainer autoClose={false} />
             </div>
         </>
     );
