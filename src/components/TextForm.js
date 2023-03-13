@@ -9,18 +9,19 @@ export default function TextForm(props) {
     let handleCopyText = () => {
         let newText = document.getElementById('myBox');
         navigator.clipboard.writeText(newText.value)
-        toast.success('Text Copied', { autoClose: 3000 })
+        toast.success('Text Copied', { autoClose: 2000 })
 
     }
 
     return (
         <>
-            <div className="container mb-7">
+            <div className="container my-4" style={{color: props.mode === 'dark'?'white':'black'}}>
                 <h1>{props.heading}</h1>
-                <div className="mb-3">
-                    <textarea
+                <div className="mb-4">
+                    <textarea 
                         className="form-control"
                         value={text}
+                        style={{backgroundColor: props.mode === 'dark'?'#070c0f':'white', color: props.mode === 'dark'?'white':'black'}}
                         onChange={(event) => {
                             console.log("hai");
                             setText(event.target.value);
@@ -35,7 +36,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-2" onClick={handleCopyText}> Copy Text </button>
                 <button className="btn btn-primary mx-2" onClick={() => { setText("") }}> Clear </button>
             </div>
-            <div className="container mb-7" >
+            <div className="container my-4" style={{color: props.mode === 'dark'?'white':'black'}}>
                 <h2> Details about The Text You Entered </h2>
                 <p>
                     Number of characters - {text.length} <br />
