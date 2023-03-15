@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route exact path="/" element={<TextForm heading="Enter The Text To Convert 👇" mode={mode} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
           {/* use exact path= to match exact url
           eg: /home ---> component 1
               /home/form ---> component 2

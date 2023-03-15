@@ -30,20 +30,23 @@ export default function TextForm(props) {
                         rows="6"
                     ></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={() => { let newText = text.toUpperCase(); setText(newText); }}> CONVERT TO UPPER CASE </button>
-                <button className="btn btn-primary mx-2" onClick={() => { let newText = text.toLowerCase(); setText(newText); }}> convert to lower case </button>
-                <button className="btn btn-primary mx-2" onClick={() => { let newText = text.split(/[ ]+/); setText(newText.join(" ")) }}> Remove Extra Spaces </button>
-                <button className="btn btn-primary mx-2" onClick={handleCopyText}> Copy Text </button>
-                <button className="btn btn-primary mx-2" onClick={() => { setText("") }}> Clear </button>
+                <button className="btn btn-primary mx-2  my-2" onClick={() => { let newText = text.toUpperCase(); setText(newText); }}> CONVERT TO UPPER CASE </button>
+                <button className="btn btn-primary mx-2  my-2" onClick={() => { let newText = text.toLowerCase(); setText(newText); }}> convert to lower case </button>
+                <button className="btn btn-primary mx-2  my-2" onClick={() => { let newText = text.split(/[ ]+/); setText(newText.join(" ")) }}> Remove Extra Spaces </button>
+                <button className="btn btn-primary mx-2  my-2" onClick={handleCopyText}> Copy Text </button>
+                <button className="btn btn-primary mx-2  my-2" onClick={() => { setText("") }}> Clear </button>
             </div>
             <div className="container my-4" style={{color: props.mode === 'dark'?'white':'black'}}>
                 <h2> Details about The Text You Entered </h2>
                 <p>
                     Number of characters - {text.length} <br />
-                    Number of Words - {text.split(" ").length} <br />
+
+                    {/* filter() to filter out blank Spaces */}
+                    Number of Words - {text.split(" ").filter((element)=>{return element.length!==0}).length} <br />
                     Time Required to Read this Paragraph - {" "}
-                    {text.split(" ").length * 0.008} minutes
+                    {text.split(" ").filter((element)=>{return element.length!==0}).length * 0.008} minutes
                     <br />
+
                     Number of Sentences - {text.split(".").length - 1} <br />
                 </p>
                 <ToastContainer autoClose={false} />
